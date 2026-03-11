@@ -1,0 +1,19 @@
+﻿@model TaskManagementApp.Models.TaskItem
+
+@{
+    ViewData["Title"] = "Tasks";
+}
+<h1>Tasks</h1>
+<p>
+    <a href="@Url.Action("Create", "TaskItem")" class="btn btn-primary">Create New Task</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
