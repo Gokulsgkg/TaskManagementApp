@@ -55,7 +55,7 @@ namespace TaskManagementApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, TaskItem taskItem)
+        public async Task<IActionResult> Edit(int id,TaskItem taskItem)
         {
             if (id != taskItem.Id)
             {
