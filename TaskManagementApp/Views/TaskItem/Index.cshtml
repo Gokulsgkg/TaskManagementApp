@@ -1,9 +1,15 @@
-﻿@model TaskManagementApp.Models.TaskItem
+﻿@model IEnumerable<TaskManagementApp.Models.TaskItem>
 
 @{
     ViewData["Title"] = "Tasks";
 }
-<h1>Tasks</h1>
+@if(TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<h1>@ViewBag.Message</h1>
 <p>
     <a href="@Url.Action("Create", "TaskItem")" class="btn btn-primary">Create New Task</a>
 </p>
@@ -16,4 +22,19 @@
             <th>Actions</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach(var project in Model)
+        {
+            <tr>
+                <td>@project.Title</td>
+                <td>@project.Description</td>
+                <td>@(project.IsCompleted ? "Completed":"Pending")</td>
+                <td>
+                    <a href="@Url.Action("Edit","TaskItem", new { id = project.Id})" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "TaskItem", new { id = project.Id })" class="btn btn-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
 </table>

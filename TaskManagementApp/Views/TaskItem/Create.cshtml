@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Create Task";
 }
-<h1>Craete Task</h1> 
+<h1>@ViewData["pageTitle"]</h1> 
 
 <form asp-action="Create" method="post">
     @await Html.PartialAsync("_TaskItemDetailsForm", Model)
