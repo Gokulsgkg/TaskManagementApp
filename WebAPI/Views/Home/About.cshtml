@@ -1,0 +1,17 @@
+﻿
+@using WebAPI.Models;
+@{
+    ViewBag.Title = "About";
+}
+@{
+    var id = Model.Id;
+    var name = Model.Name;
+    var dept = Model.Department;
+}
+
+<h2>About</h2>
+<div>
+    <h1>@id</h1>
+    <h2>@name</h2>
+    <h3>@dept</h3>
+</div>
