@@ -1,6 +1,6 @@
 <h2>{{ title() }}</h2>
 <div class="nav">
-  <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+  <a [routerLink]="['/home']" [queryParams]="{ page: 1 , sort: 'asc'}" routerLinkActive="active">Home</a>
   <a [routerLink]="['/about']" routerLinkActive="active">About</a>
   <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
 </div>
