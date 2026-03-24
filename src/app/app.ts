@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,RouterModule } from '@angular/router';
 import { CommonModule, UpperCasePipe, TitleCasePipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,8 @@ import { CommonModule, UpperCasePipe, TitleCasePipe } from '@angular/common';
     FormsModule,
     CommonModule,       // gives you *ngIf and *ngFor
     UpperCasePipe,      // enables | uppercase
-    TitleCasePipe       // enables | titlecase
+    TitleCasePipe,       // enables | titlecase
+    RouterModule         // enables routerLink and router-outlet
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
